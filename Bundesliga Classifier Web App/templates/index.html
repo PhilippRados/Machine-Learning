@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <title>Bundesliga Predictor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" type="text/css" href="/static/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway"
+  />
+  <style>
+    body,
+    h1 {
+      font-family: "Raleway", sans-serif;
+    }
+    body,
+    html {
+      height: 100%;
+    }
+    .bgimg {
+      background-image: url("https://image.freepik.com/free-photo/blurred-football-stadium_23-2147644456.jpg");
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+    .custom-btn {
+      top: 75%;
+      padding: 10px 25px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      background: transparent;
+      outline: none !important;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: rgb(87, 87, 87);
+      border-radius: 5px;
+      display: block;
+      position: absolute;
+      width: 18rem;
+      margin-top: 1rem;
+    }
+    .btn-1 {
+      border: 2px solid rgb(87, 87, 87);
+    }
+    .btn-1:hover {
+      background: rgb(87, 87, 87);
+      color: rgb(255, 255, 255);
+    }
+    .btn-1:active {
+      top: 78%;
+    }
+    input {
+      font-size: 11px;
+      padding: 8px;
+      width: 11rem;
+      padding-left: 5px;
+      height: 25px;
+      margin-left: 2%;
+    }
+    #teams,
+    #teams2 {
+      padding: 3px;
+      font-size: 13px;
+    }
+    form {
+      background-color: rgb(250, 253, 255);
+      width: 22rem;
+      height: 17rem;
+      position: absolute;
+      top: 110%;
+      transform: translate(40%);
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      color: black;
+      margin: 1%;
+    }
+    select {
+      display: inline;
+    }
+    .inputs {
+      margin-top: 5%;
+    }
+    h2 {
+      margin: 0%;
+    }
+    .prediction {
+      position: absolute;
+      top: 150%;
+    }
+  </style>
+  <body>
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+      <div
+        class="w3-display-topleft w3-padding-large w3-xlarge"
+        style="font-size: 18px !important;"
+      >
+        Made by
+        <a href="https://github.com/PythonPhil-crack"> PythonPhil-crack</a>
+      </div>
+      <div class="w3-display-middle" style="top: 25%;">
+        <h1 class="w3-jumbo w3-animate-top w3-center">
+          Bundesliga Predictor
+        </h1>
+        <hr class="w3-border-white" style="margin: auto; width: 40%;" />
+        <p class="w3-large w3-center">What is the outcome of your game?</p>
+        <form method="post" action="{{ url_for('predict')}}" class="w3-center">
+          <div class="inputs">
+            <label for="teams" style="font-weight: bold;">Home-team: </label>
+            <select name="teams" id="teams">
+              <option value="0">Augsburg</option>
+              <option value="1">Bayern Munich</option>
+              <option value="2">Dortmund</option>
+              <option value="3">Düsseldorf</option>
+              <option value="4">Eint Frankfurt</option>
+              <option value="5">Freiburg</option>
+              <option value="6">Hamburger SV</option>
+              <option value="7">Hannover 96</option>
+              <option value="8">Hertha BSC</option>
+              <option value="9">Hoffenheim</option>
+              <option value="10">Köln</option>
+              <option value="11">Leverkusen</option>
+              <option value="12">M'gladbach</option>
+              <option value="13">Mainz 05</option>
+              <option value="14">Nürnberg</option>
+              <option value="15">Paderborn 07</option>
+              <option value="16">RB Leipzig</option>
+              <option value="17">Schalke 04</option>
+              <option value="18">Stuttgart</option>
+              <option value="19">Union Berlin</option>
+              <option value="20">Werder Bremen</option>
+              <option value="21">Wolfsburg</option>
+            </select>
+            <input
+              type="text"
+              name="BO Home-team"
+              placeholder="Expected-goals Home-team"
+              required="required"
+            />
+            <h2 style="color: black;">vs</h2>
+            <label for="teams" style="font-weight: bold;">Away-team: </label>
+            <select name="teams2" id="teams2">
+              <option value="0">Augsburg</option>
+              <option value="1">Bayern Munich</option>
+              <option value="2">Dortmund</option>
+              <option value="3">Düsseldorf</option>
+              <option value="4">Eint Frankfurt</option>
+              <option value="5">Freiburg</option>
+              <option value="6">Hamburger SV</option>
+              <option value="7">Hannover 96</option>
+              <option value="8">Hertha BSC</option>
+              <option value="9">Hoffenheim</option>
+              <option value="10">Köln</option>
+              <option value="11">Leverkusen</option>
+              <option value="12">M'gladbach</option>
+              <option value="13">Mainz 05</option>
+              <option value="14">Nürnberg</option>
+              <option value="15">Paderborn 07</option>
+              <option value="16">RB Leipzig</option>
+              <option value="17">Schalke 04</option>
+              <option value="18">Stuttgart</option>
+              <option value="19">Union Berlin</option>
+              <option value="20">Werder Bremen</option>
+              <option value="21">Wolfsburg</option>
+            </select>
+            <input
+              type="text"
+              name="BO Away"
+              placeholder="Expected-goals Away-team"
+              required="required"
+            />
+          </div>
+          <button type="submit" class="w3-display-middle custom-btn btn-1">
+            Predict Result
+          </button>
+          <h1 class="prediction">{{prediction_text}}</h1>
+        </form>
+      </div>
+      <div class="w3-display-bottomleft w3-padding-large">
+        Template powered by
+        <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+          >w3.css</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

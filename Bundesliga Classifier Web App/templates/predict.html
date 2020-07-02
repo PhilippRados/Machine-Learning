@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway"
+    />
+    <title>Prediction</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    body,
+    h1 {
+      font-family: "Raleway", sans-serif;
+      color: white;
+    }
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .bgimg {
+      background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2014/04/29/345712/c7cafdaa0a42426bb9367231ceff7e99-700.jpg");
+
+      /* Add the blur effect */
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: scale(1.1);
+    }
+    .text {
+      z-index: 100;
+      position: absolute;
+      top: 30%;
+      right: 20%;
+      font-size: 2rem;
+    }
+    .back {
+      position: absolute;
+      left: 0;
+      top: 0;
+      cursor:pointer;
+      margin-left: 15px;
+      margin-top: 3px;
+    }
+    p{
+      font-size: 2em;
+      font-family: "Raleway";
+    }
+  </style>
+  <body>
+    <div class="bgimg"></div>
+    <div class="text">
+      <h1>{{prediction_text}}</h1>
+    </div>
+    <div class="back" onclick="history.back()">
+        <p style="color: white">&#60</p>
+    </div>
+    <form>
+
+      <!--<input type="button" class="back" value="&#60" onclick="history.back()">-->
+    </form>
+  </body>
+</html>
