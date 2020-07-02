@@ -1,1 +1,1 @@
-
+These are just simple html files that receive the result from the models predictions. For some odd reason I couldn't link my css-stylesheet with the html-file so I had to style the page inside the html-file but whatever.
