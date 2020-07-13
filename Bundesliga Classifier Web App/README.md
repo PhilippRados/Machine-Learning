@@ -1,4 +1,4 @@
-##### Bundesliga Predictor
+# Bundesliga Predictor
 
 This was basically my first first real ML prject where I did everything by myself and from scratch.
 I found some Bundesliga-data online at https://fbref.com/en/comps/20/history/Bundesliga-Seasons and manipulated it a little so that the algorithm could work with it.
